@@ -1,0 +1,19 @@
+.headerToolbar{
+  position: sticky;
+  position: -webkit-sticky;
+  z-index: 10;
+  top: 0;
+}
+.headerToolbar:not([class*=mat-elevation-z]) {
+  box-shadow: 0 2px 10px -1px rgb(227, 25, 90),
+  0 0 2px 0 rgb(50, 50, 50);
+}
+
+.mainDiv{
+  margin: 2%;
+}
+
+.example-full-width {
+  margin-bottom: 2%;
+  width: 100%;
+}

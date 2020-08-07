@@ -1,0 +1,32 @@
+<header>
+<mat-toolbar fxLayout class='headerToolbar' color="primary">
+  <span> TODO LIST DOCK</span> <mat-icon>check</mat-icon>
+  <span style="position:absolute; font-size: small; right: 1%"> Developed by Bala </span>
+</mat-toolbar>
+</header>
+
+<div fxLayout class="mainDiv" >
+
+<mat-form-field style="width: 100%">
+  <mat-label>ADD NEW TASK</mat-label>
+    <input matInput style="color: white;" placeholder="Drink Water" value="" #task>
+</mat-form-field>
+  <button mat-raised-button style="margin: 1%" color="primary" (click)="addTask(task.value); task.value='' ">ADD</button>
+</div>
+
+<mat-label style="font-size: x-large; color: white; margin-left: 2%; margin-bottom: 2%">TODO</mat-label>
+
+<button mat-raised-button style="margin: 1%"  (click)="clearCompleted()"> CLEAR COMPLETED </button>
+
+<mat-divider></mat-divider>
+
+<mat-selection-list  *ngFor="let task of todoTasks"   >
+
+  <mat-list-option selected="{{task.status}}" (click)="addToComplete(task.id, task.status)" color="accent" >
+  {{task.name}}
+  </mat-list-option>
+
+</mat-selection-list>
+
+
+
